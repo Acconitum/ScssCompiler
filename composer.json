@@ -1,0 +1,19 @@
+{
+    "name": "mentha-web/processwire-scss-compiler",
+    "description": "Contains a reset-css and basic container and section classes. There are several mixins to create grids or animations. For the compiling process the package scssphp/scssphp",
+    "type": "processwire-module",
+    "license": "GPL 2.0",
+    "autoload": {
+        "psr-4": {
+            "MenthaWeb\\ProcesswireScssCompiler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Acconitum",
+            "email": "marc.mentha@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
