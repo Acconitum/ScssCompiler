@@ -41,6 +41,14 @@ class ScssCompiler extends WireData implements Module, ConfigurableModule
         $field->description = 'Path to the file containing the main scss inside the templates directory';
         $fields->append($field);
 
+        $field = wire('modules')->get('InputfieldText');
+        $field->attr('name+id', 'destination');
+        $field->attr('value', $data['destination']);
+        $field->attr('required', 'true');
+        $field->label = 'Destination directory';
+        $field->description = 'Path to the directory where the compiled critical.scss and main.scss should be saved inside the templates directory. The files provided are named critical.min.css and main.min.css';
+        $fields->append($field);
+
         return $fields; 
     }
 
