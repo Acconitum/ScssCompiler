@@ -15,5 +15,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "scssphp/scssphp": "^1.11"
+    }
 }

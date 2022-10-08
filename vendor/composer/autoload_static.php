@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit912d4521e7d35ed599d836a42e4757a5
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'ScssPhp\\ScssPhp\\' => 16,
+        ),
         'M' => 
         array (
             'MenthaWeb\\ProcesswireScssCompiler\\' => 34,
@@ -14,6 +18,10 @@ class ComposerStaticInit912d4521e7d35ed599d836a42e4757a5
     );
 
     public static $prefixDirsPsr4 = array (
+        'ScssPhp\\ScssPhp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/scssphp/scssphp/src',
+        ),
         'MenthaWeb\\ProcesswireScssCompiler\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
