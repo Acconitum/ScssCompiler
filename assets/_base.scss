@@ -76,21 +76,28 @@ input[type="submit"] {
 
 .navigation-container {
     list-style: none;
-    width: $navContainerWidth;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    li {
+        position: relative;
+    }
     a {
         display: block;
         padding: 10px $navContainerPadding;
     }
 
-    li:first-child a {
+    > li:first-child a {
         padding-left: 0;
     }
 
-    li:last-child a {
+    > li:last-child a {
         padding-right: 0;
     }
+}
+.icon {
+	fill: currentColor;
+	vertical-align: sub;
+	max-width: 100%;
 }
