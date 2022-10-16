@@ -1,5 +1,96 @@
+html,
+input {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-family: $fontFamily;
+    color: $fontColor;
+}
+
 body {
-    h1 {
-        color: $primary;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $bodyBg;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.section {
+    padding-top: $sectionPadding;
+    padding-bottom: $sectionPadding;
+}
+
+.container {
+    padding-left: $containerPadding;
+    padding-right: $containerPadding;
+    margin: 0 auto;
+    width: $containerWidth;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: $h1FontSize;
+    line-height: $h1LineHeight;
+}
+
+h2 {
+    font-size: $h2FontSize;
+    line-height: $h2LineHeight;
+}
+
+h3 {
+    font-size: $h3FontSize;
+    line-height: $h3LineHeight;
+}
+
+a {
+    color: $link;
+    transition: $transition;
+    &:hover {
+        color: darken($link, 20%);
+    }
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+    background-color: $buttonBg;
+    color: $buttonColor;
+    padding: $buttonPadding;
+    border: $buttonBorder;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+        background-color: $buttonColor;
+        color: $buttonBg;
+    }
+    &:active,
+    &:focus {
+        background-color: $buttonBg;
+        color: $buttonColor;
+    }
+}
+
+.navigation-container {
+    list-style: none;
+    width: $navContainerWidth;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        display: block;
+        padding: 10px $navContainerPadding;
+    }
+
+    li:first-child a {
+        padding-left: 0;
+    }
+
+    li:last-child a {
+        padding-right: 0;
     }
 }

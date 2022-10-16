@@ -1,18 +1,44 @@
-// Base variables
-
-$paragraphPadding: 5px !default;
-
 // Font variables
-$fontSize: 16px !default;
-$lineheight: 20px !default;
-$fontColor: #323232 !default;
-$fontFamily: Arial, sans-serif !default;
+$fontSize:              16px !default;
+$lineHeight:            20px !default;
+$fontColor:             #2c2c2c !default;
+$fontFamily:            Arial, sans-serif !default;
 
 // Colors
-$primary: #00ac5b !default;
-$secondary: #ac005b !default;
-$link: #ac005b !default;
+$primary:               #00ac5b !default;
+$secondary:             #5b00ac !default;
+$link:                  #ac005b !default;
+$black:                 #000 !default;
+$gray:                  #454545 !default;
+$lightGray:             #9f9f9f !default;
+$white:                 #fff !default;
 
+// Divers
+$bodyBg:                 transparent !default;
+$transition:            all 300ms ease-in-out !default;
+
+// Button
+$buttonColor:           $white !default;
+$buttonBg:              $primary !default;
+$buttonPadding:         10px 30px !default;
+$buttonBorder:          1px solid $primary !default;
+
+// Headings
+$h1FontSize:            2.5rem !default;
+$h1LineHeight:          3rem !default;
+$h2FontSize:            2rem !default;
+$h2LineHeight:          2.5rem !default;
+$h3FontSize:            1.75rem !default;
+$h3LineHeight:          2rem !default;
 
 // Container/Grid
-$containerPadding: 20px !default;
+$containerWidth:        1024px !default;
+$containerPadding:      20px !default;
+
+// Section
+$sectionPadding:        50px !default;
+
+// Navigation
+$navContainerWidth:     $containerWidth !default;
+$navContainerPadding:   $containerPadding !default;
+

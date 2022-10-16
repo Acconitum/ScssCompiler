@@ -95,11 +95,11 @@ class Compiler
     {
         $variablesScss = '';
         if (file_exists($this->modulePath . self::VARIABLES_FILE)) {
-            $variablesScss .= file_get_contents($this->modulePath . self::VARIABLES_FILE);
+            $variablesScss .= $this->module->get('files')->fileGetContents($this->modulePath . self::VARIABLES_FILE);
         }
 
         if (!empty($this->module->variables) && file_exists($this->templatesPath . $this->module->variables)) {
-            $variablesScss .= file_get_contents($this->templatesPath . $this->module->variables);
+            $variablesScss .= $this->module->get('files')->fileGetContents($this->templatesPath . $this->module->variables);
         }
 
         return $variablesScss;
@@ -115,12 +115,12 @@ class Compiler
         $criticalScss = '';
   
         if (file_exists($this->modulePath . self::CRITICAL_FILE)) {
-            $criticalScss .= file_get_contents($this->modulePath . self::CRITICAL_FILE);
+            $criticalScss .= $this->module->get('files')->fileGetContents($this->modulePath . self::CRITICAL_FILE);
         }
 
         if (!empty($this->module->critical) && file_exists($this->templatesPath . $this->module->critical)) {
             $this->scssCompiler->addImportPath($this->templatesPath . dirname($this->module->critical));
-            $criticalScss .= file_get_contents($this->templatesPath . $this->module->critical);
+            $criticalScss .= $this->module->get('files')->fileGetContents($this->templatesPath . $this->module->critical);
         }
 
         return $criticalScss;
@@ -136,14 +136,14 @@ class Compiler
         $mainScss = '';
   
         if (file_exists($this->modulePath . self::MAIN_FILE)) {
-            $mainScss .= file_get_contents($this->modulePath . self::MAIN_FILE);
+            $mainScss .= $this->module->get('files')->fileGetContents($this->modulePath . self::MAIN_FILE);
         }
 
         if (!empty($this->module->main) && file_exists($this->templatesPath . $this->module->main)) {
             if (!in_array($this->templatesPath . dirname($this->module->main) ,$this->scssCompiler->getCompileOptions()['importPaths'])) {
                 $this->scssCompiler->addImportPath($this->templatesPath . dirname($this->module->main));
             }
-            $mainScss .= file_get_contents($this->templatesPath . $this->module->main);
+            $mainScss .= $this->module->get('files')->fileGetContents($this->templatesPath . $this->module->main);
         }
 
         return $mainScss;
@@ -161,7 +161,7 @@ class Compiler
         try {
             $compiledScss = $this->scssCompiler->compileString($content);
             if (!empty($compiledScss->getCss())) {
-                file_put_contents($this->templatesPath . $this->module->destination . '/' . $name, $compiledScss->getCss());
+                $this->module->get('files')->filePutContents($this->templatesPath . $this->module->destination . '/' . $name, $compiledScss->getCss());
             }
         } catch (\Throwable $th) {
             $this->module->error($th->getMessage());
