@@ -6,6 +6,10 @@ input {
     color: $fontColor;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -28,6 +32,9 @@ body {
     margin: 0 auto;
     width: $containerWidth;
     max-width: 100%;
+    .container {
+        padding: 0;
+    }
 }
 
 h1 {
@@ -53,6 +60,15 @@ a {
     }
 }
 
+address {
+    font-style: normal;
+    line-height: $lineHeight;
+}
+
+textarea {
+    font-family: $fontFamily;
+}
+
 button,
 .button,
 input[type="button"],
@@ -72,6 +88,14 @@ input[type="submit"] {
         background-color: $buttonBg;
         color: $buttonColor;
     }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .navigation-container {
@@ -100,4 +124,27 @@ input[type="submit"] {
 	fill: currentColor;
 	vertical-align: sub;
 	max-width: 100%;
+}
+
+.grid {
+    > * {
+        margin: $containerPadding 0 0 0;
+    }
+    @media(min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - (#{$containerPadding} / 2)));
+        column-gap: $containerPadding;
+        row-gap: $containerPadding;
+    }
+    @media(min-width: 992px) {
+        &-3,
+        &-4 {
+            grid-template-columns: repeat(3, calc(33.33% - (#{$containerPadding} / 2)));
+        }
+    }
+    @media(min-width: 1025px) {
+        &-4 {
+            grid-template-columns: repeat(4, calc(25% - (#{$containerPadding} / 2)));
+        }
+    }
 }
