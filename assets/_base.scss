@@ -37,6 +37,14 @@ body {
     }
 }
 
+.container-small {
+    padding-left: $containerPadding;
+    padding-right: $containerPadding;
+    margin: 0 auto;
+    width: $containerSmallWidth;
+    max-width: 100%;
+}
+
 h1 {
     font-size: $h1FontSize;
     line-height: $h1LineHeight;
@@ -78,6 +86,7 @@ input[type="submit"] {
     padding: $buttonPadding;
     border: $buttonBorder;
     transition: $transition;
+    display: inline-block;
     cursor: pointer;
     &:hover {
         background-color: $buttonColor;

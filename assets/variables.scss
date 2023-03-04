@@ -12,10 +12,12 @@ $black:                 #000 !default;
 $gray:                  #454545 !default;
 $lightGray:             #9f9f9f !default;
 $white:                 #fff !default;
+$shadowColor:           $black;
 
 // Divers
 $bodyBg:                transparent !default;
 $transition:            all 300ms ease-in-out !default;
+$boxShadow:             0 0 10px $shadowColor !default;
 
 // Button
 $buttonColor:           $white !default;
@@ -33,6 +35,7 @@ $h3LineHeight:          2rem !default;
 
 // Container/Grid
 $containerWidth:        1024px !default;
+$containerSmallWidth:   640px !default;
 $containerPadding:      20px !default;
 
 // Section
